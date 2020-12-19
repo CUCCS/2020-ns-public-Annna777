@@ -108,21 +108,33 @@ log-facility=/var/log/dnsmasq.log
 |kali-attacker | 10.0.2.15/24|
 
 #### 3. 网络连通性测试 
-##### 1. 靶机可以直接访问攻击者主机 
+##### 1. 靶机可以直接访问攻击者主机
+ 
 kali-victim-1访问kali-attacker 
+
   ![](img/kali-victim访问attacker.png) 
+
 Debian-victim-2访问kali-attacker
+
    ![](img/debian-victim2访问attacker.png)
+
 xp-victim-1访问kali-attacker
+
    ![](img/xp1.png) 
+
 xp-victim-2访问kali-attacker
+
    ![](img/xp2.png) 
+
 ##### 2. 攻击者主机无法直接访问靶机 
    ![](img/attacker访问靶机.png) 
 ##### 3. 网关可以直接访问攻击者主机和靶机 
+
    ![](img/网关访问1.png) 
+
    ![](img/网关访问2.png) 
 ##### 4.靶机的所有对外上下行流量必须经过网关&所有节点均可以访问互联网 
+
 在网关上安装tcpdump，并对对应网卡进行监控。在各个节点上访问互联网，观察捕获到了上下行的包，说明靶机的所有对外上下行流量必须经过网关。 
 ``` 
 apt insatll tcpdump
@@ -130,27 +142,47 @@ apt insatll tcpdump
 ``` 
 
 网关可以访问互联网： 
+
    ![](img/访问互联网1.png) 
+
 kali-attacker可以访问互联网
+
    ![](img/访问互联网2.png) 
+
 victim-kali-1可以访问互联网
+
    ![](img/访问互联网3.png) 
+
 上下行流量经过网关： 
+
    ![](img/victim-kali1经过网关.png) 
+
 victim-debian2可以访问互联网
+
    ![](img/访问互联网4.png) 
+
 上下行流量经过网关： 
+
    ![](img/debian-victim2经过网关.png) 
+
 xp-victim-1可以访问互联网
+
    ![](img/访问互联网5.png) 
+
 上下行流量经过网关： 
+
    ![](img/xp1经过网关.png) 
+
 xp-victim-2可以访问互联网
+
    ![](img/访问互联网6.png) 
+
 上下行流量经过网关： 
+
    ![](img/xp2经过网关.png) 
 
-#### 参考资料 
+
+#### 参考资料  
 * https://www.bilibili.com/video/BV16t4y1i7rz?p=12 
 * https://github.com/CUCCS/2020-ns-public-Crrrln/blob/chap0x01/chap0x01/
 * https://github.com/CUCCS/2020-ns-public-LyuLumos/blob/ch0x01/ch0x01/
