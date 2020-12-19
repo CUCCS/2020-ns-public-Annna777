@@ -51,7 +51,8 @@ def tcpconnect(dst_ip,dst_port,timeout=10):
 tcpconnect('172.16.111.108',80)
 ``` 
   * Closed 
-    靶机检测自身端口状态
+  
+    靶机检测自身端口状态 
     ![](img/靶机检测自身端口状态.png) 
     攻击者主机运行TCP connect scan python脚本 
     ![](img/tcpc_closed.png) 
