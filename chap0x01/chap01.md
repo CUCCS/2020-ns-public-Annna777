@@ -97,7 +97,7 @@ log-facility=/var/log/dnsmasq.log
 
 |名称 | ip |
 |:--|:--|
-|debian-getaway<1> |10.0.2.15  |
+|debian-getaway<1> |10.0.2.15/24  |
 |debian-getaway<2> | 192.168.56.102/24 | 
 |debian-getaway<3>  | 172.16.111.1/24 | 
 |debian-getaway<4>  | 172.16.222.1/24 | 
@@ -105,6 +105,7 @@ log-facility=/var/log/dnsmasq.log
 |xp-victim-1  | 172.16.111.130/24 | 
 |xp-victim-2  | 172.16.222.128/24 | 
 |victim-debian2  | 172.16.222.147/24 | 
+|kali-attacker | 10.0.2.15/24|
 
 #### 3. 网络连通性测试 
 ##### 1. 靶机可以直接访问攻击者主机 
