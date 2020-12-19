@@ -53,13 +53,21 @@ tcpconnect('172.16.111.108',80)
   * Closed 
   
     靶机检测自身端口状态 
+    
     ![](img/靶机检测自身端口状态.png) 
+    
     攻击者主机运行TCP connect scan python脚本 
+    
     ![](img/tcpc_closed.png) 
+    
     靶机Wireshark抓包
+    
     ![](img/1.png) 
+    
     攻击者主机nmap复刻 
+    
     ![](img/n_tcpc_closed.png)
+    
     分析：TCP三次握手机制，攻击者主机向靶机发送连接请求后，靶机相应端口处于关闭状态，靶机将会向攻击者返回[RST,ACK]包，抓包结果与预期结果一致。 
   * Open 
     攻击者主机运行TCP connect scan python脚本 
