@@ -69,24 +69,43 @@ tcpconnect('172.16.111.108',80)
     ![](img/n_tcpc_closed.png)
     
     分析：TCP三次握手机制，攻击者主机向靶机发送连接请求后，靶机相应端口处于关闭状态，靶机将会向攻击者返回[RST,ACK]包，抓包结果与预期结果一致。 
+    
   * Open 
+  
     攻击者主机运行TCP connect scan python脚本 
+    
     ![](img/tcpc_opend.png) 
+    
     靶机Wireshark抓包 
+    
     ![](img/2.png) 
+    
     攻击者主机nmap复刻 
+    
     ![](img/n_tcpc_open.png) 
+    
     分析：TCP三次握手机制，攻击者主机向靶机发送连接请求后，收到靶机返回[SYN/ACK]数据包，抓包结果与预期结果一致。
+    
   * Filtered 
+  
     攻击者主机运行TCP connect scan python脚本 
+    
     ![](img/tcpc_filterd.png) 
+    
     靶机Wireshark抓包 
+    
     ![](img/3.png) 
+    
     攻击者主机nmap复刻 
+    
     ![](img/n_tcpc_filterd.png) 
+    
     分析：TCP三次握手机制，攻击者主机向靶机发送连接请求后，没有得到任何响应，抓包结果与预期结果一致。 
+    
 * TCP stealth scan 
+
     原理与TCP connect scan类似 
+    
 ```
 #攻击者主机编写tcpstealth.py
 from scapy.all import *
@@ -105,25 +124,45 @@ def tcpstealthscan(dst_ip , dst_port , timeout = 10):
                 print ("Filtered")
 tcpstealthscan('172.16.111.108',80)
 ``` 
+
   * Closed
+  
     ![](img/tcps_closed.png) 
+    
     靶机Wireshark抓包 
+    
     ![](img/4.png) 
-    攻击者主机nmap复刻 
+    
+    攻击者主机nmap复刻
+    
     ![](img/n_tcps_closed.png) 
+    
   * Open 
+  
     ![](img/tcps_opend.png) 
+    
     靶机Wireshark抓包 
+    
     ![](img/5.png) 
+    
     攻击者主机nmap复刻 
+    
     ![](img/n_tcps_opend.png) 
+    
   * Filtered 
+  
     ![](img/tcps_filterd.png) 
+    
     靶机Wireshark抓包 
+    
     ![](img/6.png) 
+    
     攻击者主机nmap复刻 
+    
     ![](img/n_tcps_filterd.png) 
+    
 * TCP Xmas scan 
+
 ```
 #攻击者主机编写tcpxmas.py
 from scapy.all import *
@@ -139,29 +178,53 @@ def Xmasscan(dst_ip , dst_port , timeout = 10):
             print ("Filtered")
 Xmasscan('172.16.111.108',80)
 ``` 
+
   * Closed
+  
     ![](img/tcpx_closed.png) 
+    
     靶机Wireshark抓包 
+    
     ![](img/7.png) 
+    
     攻击者主机nmap复刻 
+    
     ![](img/n_tcpx_closed.png) 
+    
     分析：Xmas发送TCP请求，在靶机端口关闭状态下，靶机响应[RST，ACK]，抓包结果与预期结果一致。 
+    
   * Open 
+  
     ![](img/tcpx_opend.png) 
+    
     靶机Wireshark抓包 
+    
     ![](img/8.png) 
+    
     攻击者主机nmap复刻 
+    
     ![](img/n_tcpx_opend.png)  
+    
     分析：Xmas发送TCP请求，在靶机端口开放状态下，靶机无响应，抓包结果与预期结果一致。
+    
   * Filtered 
+  
     ![](img/tcpx_filterd.png) 
+    
     靶机Wireshark抓包 
+    
     ![](img/9.png) 
+    
     攻击者主机nmap复刻 
+    
     ![](img/n_tcpx_filterd.png) 
+    
     分析：Xmas发送TCP请求，在靶机端口被过滤状态下，靶机无响应，抓包结果与预期结果一致。 
+    
 *  TCP fin scan
+
    原理与TCP Xmas scan类似
+   
 ```
 #攻击者主机编写tcpfin.py
 from scapy.all import *
@@ -177,26 +240,47 @@ def finscan(dst_ip , dst_port , timeout = 10):
             print ("Filtered")
 finscan('172.16.111.108',80)
 ``` 
+
   * Closed
+  
     ![](img/tcpf_closed.png) 
+    
     靶机Wireshark抓包 
+    
     ![](img/10.png) 
+    
     攻击者主机nmap复刻 
+    
     ![](img/n_tcpf_closed.png) 
+    
   * Open 
+  
     ![](img/tcpf_opend.png) 
+    
     靶机Wireshark抓包 
+    
     ![](img/11.png) 
+    
     攻击者主机nmap复刻 
+    
     ![](img/n_tcpf_opend.png) 
+    
   * Filtered 
+  
     ![](img/tcpf_filterd.png) 
+    
     靶机Wireshark抓包 
+    
     ![](img/12.png) 
+    
     攻击者主机nmap复刻 
+    
     ![](img/n_tcpf_filterd.png) 
+    
 *  TCP null scan 
+
    原理与TCP Xmas scan类似 
+   
 ```
 #攻击者主机编写tcpnull.py
 from scapy.all import *
@@ -212,25 +296,45 @@ def nullscan(dst_ip , dst_port , timeout = 10):
             print ("Filtered")
 nullscan('172.16.111.108',80)
 ``` 
+
   * Closed
+  
     ![](img/tcpn_closed.png) 
+    
     靶机Wireshark抓包 
+    
     ![](img/13.png) 
+    
     攻击者主机nmap复刻 
+    
     ![](img/n_tcpn_closed.png) 
+    
   * Open 
+  
     ![](img/tcpn_opend.png) 
+    
     靶机Wireshark抓包 
+    
     ![](img/14.png) 
+    
     攻击者主机nmap复刻 
+    
     ![](img/n_tcpn_opend.png) 
+    
   * Filtered 
+  
     ![](img/tcpn_filterd.png) 
+    
     靶机Wireshark抓包 
+    
     ![](img/15.png) 
+    
     攻击者主机nmap复刻 
+    
     ![](img/n_tcpn_filterd.png) 
+    
 * UDP scan 
+
 ```
 #攻击者主机编写udp.py
 from scapy.all import *
@@ -249,26 +353,47 @@ def udpscan(dst_ip,dst_port,dst_timeout = 10):
             print("Open")
 udpscan('172.16.111.108',53)
 ``` 
+
   * Closed
+  
     ![](img/udp_closed.png) 
+    
     靶机Wireshark抓包 
+    
     ![](img/16.png) 
+    
     攻击者主机nmap复刻 
+    
     ![](img/n_udp_closed.png) 
+    
     分析：UDP扫描属于开放式扫描，靶机udp/53 端口关闭状态下，对攻击者主机并无任何响应，抓包结果与预期结果一致。 
+    
   * Open 
+  
     ![](img/udp_opend.png) 
+    
     靶机Wireshark抓包 
+    
     ![](img/17.png) 
+    
     攻击者主机nmap复刻 
+    
     ![](img/n_udp_opend.png) 
+    
     分析：UDP扫描属于开放式扫描，靶机udp/53 端口开启状态下，对攻击者主机并无任何响应，无法判断被过滤或开启，抓包结果与预期结果一致。
+    
   * Filtered 
+  
     ![](img/udp_filterd.png) 
+    
     靶机Wireshark抓包 
+    
     ![](img/18.png) 
+    
     攻击者主机nmap复刻 
+    
     ![](img/n_udp_filterd.png) 
+    
     分析：UDP扫描属于开放式扫描，靶机udp/53 端口被过滤状态下，对攻击者主机并无任何响应，无法判断被过滤或开启，抓包结果与预期结果一致。 
 
 #### 参考资料 
