@@ -150,6 +150,6 @@ xp-victim-2可以访问互联网
    ![](img/xp2经过网关.png) 
 
 #### 参考资料 
-https://www.bilibili.com/video/BV16t4y1i7rz?p=12 
-https://github.com/CUCCS/2020-ns-public-Crrrln/blob/chap0x01/chap0x01/%E5%AE%9E%E9%AA%8C%E6%8A%A5%E5%91%8A.md 
-https://github.com/CUCCS/2020-ns-public-LyuLumos/blob/ch0x01/ch0x01/%E5%9F%BA%E4%BA%8E%20VirtualBox%20%E7%9A%84%E7%BD%91%E7%BB%9C%E6%94%BB%E9%98%B2%E5%9F%BA%E7%A1%80%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA.md
+* https://www.bilibili.com/video/BV16t4y1i7rz?p=12 
+* https://github.com/CUCCS/2020-ns-public-Crrrln/blob/chap0x01/chap0x01/%E5%AE%9E%E9%AA%8C%E6%8A%A5%E5%91%8A.md 
+* https://github.com/CUCCS/2020-ns-public-LyuLumos/blob/ch0x01/ch0x01/%E5%9F%BA%E4%BA%8E%20VirtualBox%20%E7%9A%84%E7%BD%91%E7%BB%9C%E6%94%BB%E9%98%B2%E5%9F%BA%E7%A1%80%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA.md
